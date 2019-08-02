@@ -1,4 +1,7 @@
 steps:
- - name: maven:3.6.0-jdk-11-slim
-   entrypoint: 'mvn'
-   args: ['clean', 'install', '$_TEST_CASE']
+ - name: 'gcr.io/cloud-builders/mvn'
+   entrypoint: 'bash'
+   args: 
+   - '-c'
+   - |
+     mvn -Dtest=TestHighPriorityFix test
