@@ -1,4 +1,5 @@
 steps:
+ # RUn the Maven build
  - name: maven:3.6.0-jdk-11-slim
    entrypoint: 'mvn'
-   args: ['clean', 'install', '-DskipTests']
+   args: ['clean', 'install', '$_TEST_CASE']
