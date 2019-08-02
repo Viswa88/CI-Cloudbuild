@@ -5,5 +5,4 @@ steps:
    - '-c'
    - |
      mvn -Dtest=TestHighPriorityFix test
-   - |
-     mvn package
+   - mvn package
