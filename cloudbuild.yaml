@@ -4,5 +4,5 @@ steps:
    args: 
    - '-c'
    - |
-     mvn -Dtest=Test$BRANCH_NAME test
+     mvn -Dtest=TestHighPriorityFix test
    - mvn package
