@@ -1,4 +1,7 @@
 steps:
  - name: maven:3.6.0-jdk-11-slim
    entrypoint: 'mvn'
-   args: ['clean', 'install', '$_TEST_CASE']
+   args: ['clean', 'install', '-DskipTests']
+ - name: maven
+   entrypoint: 'mvn'
+   args: ['-Dtest=$_TEST_CASE test']
