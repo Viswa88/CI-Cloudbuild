@@ -4,4 +4,4 @@ steps:
    args: ['clean', 'install', '-DskipTests']
  - name: maven
    entrypoint: 'mvn'
-   args: ['-Dtest=$_TEST_CASE test']
+   args: ['mvn -Dtest=$_TEST_CASE test']
