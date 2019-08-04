@@ -6,11 +6,11 @@ steps:
    - |
     echo "Building branch $BRANCH_NAME @ $REPO_NAME... "
 
-    if [ "$BRANCHNAME" =  "Master" ]; then
+    if [ "$BRANCH_NAME" =  "Master" ]; then
       mvn -Dtest=TestMaster test
-    elif [ "$BRANCHNAME" = "high-priority-fix" ]; then
+    elif [ "$BRANCH_NAME" = "high-priority-fix" ]; then
       mvn -Dtest=TestHighPriorityFix test
-    elif [ "$BRANCHNAME" = "low-priority-fix" ]; then
+    elif [ "$BRANCH_NAME" = "low-priority-fix" ]; then
      mvn -Dtest=TestLowPriorityFix test
     else
     echo "You did not enter a number between 1 and 3."
