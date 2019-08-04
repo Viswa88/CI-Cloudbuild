@@ -1,8 +1,17 @@
 steps:
  - name: 'gcr.io/cloud-builders/mvn'
    entrypoint: 'bash'
-   args: 
+   args:
    - '-c'
    - |
-     mvn -Dtest=TestHighPriorityFix test
-   - mvn package
+    echo "Deploying and building branch $BRANCH_NAME @ $REPO_NAME... "
+    case $BRANCH_NAME in
+      master)
+         mvn -Dtest=TestHighPriorityFix test
+        ;;
+      dev)
+        mvn -Dtest=TestLowPriorityFix test
+        ;;
+      *)
+        echo "branch $BRANCH_NAME ignored."
+    esac
