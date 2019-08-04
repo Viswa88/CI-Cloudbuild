@@ -4,13 +4,13 @@ steps:
    args:
    - '-c'
    - |
-    echo "Deploying and building branch $BRANCH_NAME @ $REPO_NAME... "
+    echo "Building branch $BRANCH_NAME @ $REPO_NAME... "
     case $BRANCH_NAME in
       master)
-         mvn -Dtest=TestHighPriorityFix test
+         mvn -Dtest=Test-$BRANCH_NAME test
         ;;
-      dev)
-        mvn -Dtest=TestLowPriorityFix test
+      low-priority-fix)
+        mvn -Dtest=Test-$BRANCH_NAME test 
         ;;
       *)
         echo "branch $BRANCH_NAME ignored."
