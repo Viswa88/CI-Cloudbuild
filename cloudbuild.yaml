@@ -13,5 +13,5 @@ steps:
     elif [ "$BRANCH_NAME" = "low-priority-fix" ]; then
      mvn -Dtest=TestLowPriorityFix test
     else
-    echo "You did not enter a number between 1 and 3."
+    echo "If a new branch create one more if condition."
     fi
