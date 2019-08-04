@@ -5,13 +5,13 @@ steps:
    - '-c'
    - |
     echo "Building branch $BRANCH_NAME @ $REPO_NAME... "
-    case $BRANCH_NAME in
-      master)
-         mvn -Dtest=Test-$BRANCH_NAME test
-        ;;
-      low-priority-fix)
-        mvn -Dtest=Test-$BRANCH_NAME test 
-        ;;
-      *)
-        echo "branch $BRANCH_NAME ignored."
-    esac
+
+    if [ "$BRANCHNAME" =  "Master" ]; then
+      mvn -Dtest=TestMaster test
+    elif [ "$BRANCHNAME" = "high-priority-fix" ]; then
+      mvn -Dtest=TestHighPriorityFix test
+    elif [ "$BRANCHNAME" = "low-priority-fix" ]; then
+     mvn -Dtest=TestLowPriorityFix test
+    else
+    echo "You did not enter a number between 1 and 3."
+    fi
