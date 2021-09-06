@@ -3,7 +3,7 @@
   <groupId>com.nts</groupId>
   <artifactId>ci</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>clou build test</name>
+  <name>cloud build test</name>
   <description>App for testing cloud build</description>
   
   <properties>
